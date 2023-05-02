@@ -34,17 +34,17 @@
 <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div class="col mb-5">
+            <div class="col mb-5" th:each="product: ${products}">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <a th:href="item.html"><img class="card-img-top" th:src="@{/img/products/lettuce.jpg}" alt="Lettuce"/></a>
+                    <a th:href="item.html+'/'+${product.id}"><img class="card-img-top" th:src="${product.image}" alt="Lettuce"/></a>
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder">Lettuce</h5>
+                            <h5 class="fw-bolder">${product.name}</h5>
                             <!-- Product price-->
-                            8.00€
+                            [[${product.}]]
                         </div>
                     </div>
                     <!-- Product actions-->

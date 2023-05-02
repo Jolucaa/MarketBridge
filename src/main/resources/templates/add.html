@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head th:replace="~{fragments/head :: head}"></head>
-
 <body>
 <h2 class="text-center">[[${pageTitle}]]</h2>
 
 <div class="my-3">
-    <form th:action="@{/}" method="post" enctype="multipart/form-data" th:object="${Product}"
+    <form th:action="@{/}" method="post" enctype="multipart/form-data" th:object="${ProductEntity}"
           style="max-width: 550px; margin: 0 auto">
-
         <input type="hidden" th:field="*{product}"/>
-
         <div class="p-3">
-
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label" for="">Nombre</label>
                 <div class="col-sm-9">
@@ -22,57 +17,26 @@
                     </select>
                 </div>
             </div>
-
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label" for="">Status</label>
-                <div class="col-sm-9">
-                    <select class="form-select form-control" th:field="*{status}">
-
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label" for="">Capacidad</label>
-                <div class="col-sm-9">
-                    <select class="form-select form-control" th:field="*{Capacidad}">
-
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label" for="">Color</label>
-                <div class="col-sm-9">
-                    <select class="form-select form-control" th:field="*{Color}">
-
-                    </select>
-                </div>
-            </div>
-
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label" for="">Precio</label>
                 <div class="col-sm-9">
-                    <select class="form-select form-control" th:field="*{Precio}">
+                    <select class="form-select form-control" th:field="*{price}">
 
                     </select>
                 </div>
             </div>
-
-
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label" for="">Tipo</label>
+                <label class="col-sm-3 col-form-label" for="">Fecha de Caducidad</label>
                 <div class="col-sm-9">
-                    <select class="form-select form-control" th:field="*{Tipo}">
+                    <select class="form-select form-control" th:field="*{startDate}">
 
                     </select>
                 </div>
             </div>
-
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label" for="">Foto</label>
                 <div class="col-sm-9">
-                    <select class="form-select form-control" th:field="*{foto}">
+                    <select class="form-select form-control" th:field="*{image}">
 
                     </select>
                 </div>
@@ -84,8 +48,6 @@
         </div>
     </form>
 </div>
-
-
 <div th:replace="fragments/footer :: footer"></div>
 </body>
 
