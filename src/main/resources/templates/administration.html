@@ -51,15 +51,13 @@
 					<td><a th:href="@{''}"
 						title="Editar" class="fa-regular fa-pen-to-square icon-dark"></a>
 
-						<a th:href="@{',${}"
-						th:vechiculoTitle="${}" id="btnDelete"
+						<a th:href="@{'' + ${product.id}}" id="btnDelete"
 						title="Delete"
 						class="fa-regular fa-trash-can icon-dark btn-delete"></a></td>
-			</tr>
+				</tr>
 			</tbody>
 		</table>
 	</div>
-
 	<div th:replace="~{fragments/footer :: footer}"></div>
 </body>
 
